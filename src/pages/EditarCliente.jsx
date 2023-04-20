@@ -42,7 +42,7 @@ const EditarCliente = () => {
                 noValidate>
                 
                 <Formulario
-                cliente={cliente}
+                  cliente={cliente}
                 />
 
                 <input 
