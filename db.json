@@ -9,13 +9,6 @@
       "id": 1
     },
     {
-      "id": 2,
-      "nombre": "Karen",
-      "telefono": 138198313,
-      "email": "karen@juan.com",
-      "empresa": "Codigo Con Juan"
-    },
-    {
       "id": 3,
       "nombre": "Josue",
       "telefono": 31983913,

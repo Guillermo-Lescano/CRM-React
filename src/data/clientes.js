@@ -39,3 +39,18 @@ export async function editarCliente(id, datos) {
         console.log(error)
     }
 }
+
+export async function eliminarCliente(id){
+    try {
+        const respuesta = await fetch(`${import.meta.env.VITE_API_URL}/${id}`, {
+            method: 'DELETE'     
+            /* body: JSON.stringify(datos), EL delete no tiene body ni header porque no manda datos, solo elimina
+            headers: {
+                'Content-Type' : 'application/json'
+            } */
+        })
+        await respuesta.json()  //retorna true o false
+    } catch (error) {
+        console.log(error)
+    }
+}
