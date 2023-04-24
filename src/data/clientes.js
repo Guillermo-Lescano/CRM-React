@@ -11,7 +11,6 @@ export async function obtenerCliente(id) {
 }
 
 export async function agregarCliente(datos) {
-
     try {
         const respuesta = await fetch(import.meta.env.VITE_API_URL, {
             method: 'POST',     //aca se aclara el metodo , en el get no, porque por defecto es get
@@ -24,6 +23,19 @@ export async function agregarCliente(datos) {
     } catch (error) {
         console.log(error)
     }
+}
 
-    console.log('se muestran los datos del form', datos)
+export async function editarCliente(id, datos) {
+    try {
+        const respuesta = await fetch(`${import.meta.env.VITE_API_URL}/${id}`, {
+            method: 'PUT',     
+            body: JSON.stringify(datos),  //son los datos que vamos a mandar al sevidor
+            headers: {
+                'Content-Type' : 'application/json'    //mandamos este formato 
+            }
+        })
+        await respuesta.json()  //retorna true o false
+    } catch (error) {
+        console.log(error)
+    }
 }
